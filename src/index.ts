@@ -80,7 +80,7 @@ const keywordsTimeUnit = {
   weeks: true,
 };
 const keywordsBlockAndTransactionProperties = {
-  block: ['coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp'],
+  block: ['coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'basefee', 'blobbasefee', 'chainid', 'prevrandao'],
   msg: ['data', 'sender', 'sig', 'value'],
   tx: ['gasprice', 'origin'],
 };
