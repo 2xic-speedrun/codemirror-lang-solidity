@@ -20,7 +20,7 @@
     "dev": "vite ./dev",
     "build": "cm-buildhelper src/index.ts",
     "test": "cm-runtests",
-    "publish": "npm run build && npm publish"
+    "publish": "npm run build"
   },
   "peerDependencies": {
     "@codemirror/language": "^6.0.0"
