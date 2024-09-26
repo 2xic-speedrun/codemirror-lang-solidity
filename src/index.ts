@@ -160,6 +160,7 @@ const keywordsAbiEncodeDecodeFunctions = {
     'encodeWithSelector',
     'encodeWithSignature',
     'encode',
+    'encodeCall',
   ],
 };
 
