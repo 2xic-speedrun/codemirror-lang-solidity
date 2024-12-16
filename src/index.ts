@@ -190,7 +190,7 @@ let curPunc;
 function tokenBase(stream: StringStream, state: State) {
   let ch = stream.next();
 
-  if (ch === '"' || ch === "'" || ch === '`') {
+  if (state.grammar !== 'doc' && (ch === '"' || ch === "'" || ch === '`')) {
     state.tokenize = tokenString(ch);
 
     return state.tokenize(stream, state);
