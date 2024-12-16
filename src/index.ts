@@ -236,7 +236,7 @@ function tokenBase(stream: StringStream, state: State) {
         ch = stream.next();
       }
 
-      return 'doc';
+      return 'comment';
     }
 
     if (stream.eat('/')) {
@@ -271,10 +271,10 @@ function tokenBase(stream: StringStream, state: State) {
         return cur === `@${item}`;
       })
     ) {
-      return 'docReserve';
+      return 'variable-2';
     }
 
-    return 'doc';
+    return 'comment';
   }
 
   if (cur === 'solidity' && state.lastToken === 'pragma') {
@@ -753,7 +753,7 @@ export const parser: StreamParser<State> = {
   fold: 'brace',
   blockCommentStart: '/*',
   blockCommentEnd: '*/',
-  lineComment: '//',
+  // lineComment: '//',
   tokenTable: {
     functionName: Tag.define(),
     parameterValue: Tag.define(),
@@ -763,6 +763,7 @@ export const parser: StreamParser<State> = {
     version: Tag.define(),
     etherUnit: Tag.define(),
     doc: Tag.define(),
+    docReserve: Tag.define(),
     mathematicalAndCryptographic: Tag.define(),
     abi: Tag.define(),
   }

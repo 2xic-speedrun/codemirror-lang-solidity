@@ -22,6 +22,8 @@ contract EtherWallet {
         payable(msg.sender).transfer(_amount);
     }
 
+    /// @notice Returns the balance.
+    /// @return the balance.
     function getBalance() external view returns (uint) {
         return address(this).balance;
     }
